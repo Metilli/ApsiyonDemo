@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04035A6127A3E160004E35E5 /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04035A6027A3E160004E35E5 /* MovieListViewController.swift */; };
+		04035A6327A419F2004E35E5 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04035A6227A419F2004E35E5 /* MovieCell.swift */; };
 		0419A06427A3D895001919D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419A06327A3D895001919D5 /* AppDelegate.swift */; };
 		0419A06627A3D895001919D5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0419A06527A3D895001919D5 /* SceneDelegate.swift */; };
 		0419A06B27A3D895001919D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0419A06927A3D895001919D5 /* Main.storyboard */; };
 		0419A06E27A3D895001919D5 /* ApsiyonDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0419A06C27A3D895001919D5 /* ApsiyonDemo.xcdatamodeld */; };
 		0419A07027A3D898001919D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0419A06F27A3D898001919D5 /* Assets.xcassets */; };
 		0419A07327A3D898001919D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0419A07127A3D898001919D5 /* LaunchScreen.storyboard */; };
+		043781D627A46E6C00838BE1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043781D527A46E6C00838BE1 /* Constants.swift */; };
+		043781DA27A4723B00838BE1 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043781D927A4723B00838BE1 /* AddButton.swift */; };
+		043781DC27A47C6D00838BE1 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043781DB27A47C6D00838BE1 /* MovieDetailViewController.swift */; };
+		09D783D379D0E2C4D8D7E2C3 /* Pods_ApsiyonDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2B32AB8706B695C306C37C /* Pods_ApsiyonDemo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04035A6027A3E160004E35E5 /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
+		04035A6227A419F2004E35E5 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		0419A06027A3D895001919D5 /* ApsiyonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApsiyonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0419A06327A3D895001919D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0419A06527A3D895001919D5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +32,12 @@
 		0419A06F27A3D898001919D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0419A07227A3D898001919D5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0419A07427A3D898001919D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		043781D527A46E6C00838BE1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		043781D927A4723B00838BE1 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
+		043781DB27A47C6D00838BE1 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		7D2B32AB8706B695C306C37C /* Pods_ApsiyonDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApsiyonDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EB12B5FE31682BE06CE9231 /* Pods-ApsiyonDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApsiyonDemo.release.xcconfig"; path = "Target Support Files/Pods-ApsiyonDemo/Pods-ApsiyonDemo.release.xcconfig"; sourceTree = "<group>"; };
+		E2563FED7E8AF12EBC12BAC3 /* Pods-ApsiyonDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApsiyonDemo.debug.xcconfig"; path = "Target Support Files/Pods-ApsiyonDemo/Pods-ApsiyonDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09D783D379D0E2C4D8D7E2C3 /* Pods_ApsiyonDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +57,8 @@
 			children = (
 				0419A06227A3D895001919D5 /* ApsiyonDemo */,
 				0419A06127A3D895001919D5 /* Products */,
+				34ECCE60C298ECB52801F48C /* Pods */,
+				0B7A6493B1AD9197FAA05C5F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +83,7 @@
 				0419A06F27A3D898001919D5 /* Assets.xcassets */,
 				0419A07127A3D898001919D5 /* LaunchScreen.storyboard */,
 				0419A07427A3D898001919D5 /* Info.plist */,
+				043781D527A46E6C00838BE1 /* Constants.swift */,
 			);
 			path = ApsiyonDemo;
 			sourceTree = "<group>";
@@ -80,6 +98,8 @@
 		0419A07B27A3D8B6001919D5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				04035A6227A419F2004E35E5 /* MovieCell.swift */,
+				043781D927A4723B00838BE1 /* AddButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -87,6 +107,8 @@
 		0419A07C27A3D8BD001919D5 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				04035A6027A3E160004E35E5 /* MovieListViewController.swift */,
+				043781DB27A47C6D00838BE1 /* MovieDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -99,6 +121,23 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		0B7A6493B1AD9197FAA05C5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D2B32AB8706B695C306C37C /* Pods_ApsiyonDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34ECCE60C298ECB52801F48C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2563FED7E8AF12EBC12BAC3 /* Pods-ApsiyonDemo.debug.xcconfig */,
+				7EB12B5FE31682BE06CE9231 /* Pods-ApsiyonDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +145,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0419A07727A3D898001919D5 /* Build configuration list for PBXNativeTarget "ApsiyonDemo" */;
 			buildPhases = (
+				201E8DB261FE559BDEF5B59C /* [CP] Check Pods Manifest.lock */,
 				0419A05C27A3D895001919D5 /* Sources */,
 				0419A05D27A3D895001919D5 /* Frameworks */,
 				0419A05E27A3D895001919D5 /* Resources */,
+				831AC68D135559DF764EC3A0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,14 +206,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		201E8DB261FE559BDEF5B59C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ApsiyonDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		831AC68D135559DF764EC3A0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApsiyonDemo/Pods-ApsiyonDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApsiyonDemo/Pods-ApsiyonDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApsiyonDemo/Pods-ApsiyonDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0419A05C27A3D895001919D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0419A06E27A3D895001919D5 /* ApsiyonDemo.xcdatamodeld in Sources */,
+				043781DA27A4723B00838BE1 /* AddButton.swift in Sources */,
 				0419A06427A3D895001919D5 /* AppDelegate.swift in Sources */,
 				0419A06627A3D895001919D5 /* SceneDelegate.swift in Sources */,
+				043781DC27A47C6D00838BE1 /* MovieDetailViewController.swift in Sources */,
+				04035A6327A419F2004E35E5 /* MovieCell.swift in Sources */,
+				04035A6127A3E160004E35E5 /* MovieListViewController.swift in Sources */,
+				043781D627A46E6C00838BE1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +404,7 @@
 		};
 		0419A07827A3D898001919D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2563FED7E8AF12EBC12BAC3 /* Pods-ApsiyonDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -326,9 +415,10 @@
 				INFOPLIST_FILE = ApsiyonDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,6 +434,7 @@
 		};
 		0419A07927A3D898001919D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EB12B5FE31682BE06CE9231 /* Pods-ApsiyonDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -354,9 +445,10 @@
 				INFOPLIST_FILE = ApsiyonDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
