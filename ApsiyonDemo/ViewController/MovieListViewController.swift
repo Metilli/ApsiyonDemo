@@ -84,10 +84,19 @@ extension MovieListViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCell.identifier, for: indexPath) as! MovieCell
         
-        cell.setTitle("The Shawkshank Redemption")
-        cell.setScore(9.2)
-        cell.setReleaseDate("1970")
-        
+        if indexPath.row == 0{
+            cell.setTitle("The Shawkshank Redemption")
+            cell.setReleaseDate("1970")
+            cell.setScore(9.1)
+        }else if indexPath.row == 1{
+            cell.setTitle("Fight Club")
+            cell.setReleaseDate("1975")
+            cell.setScore(7)
+        }else{
+            cell.setTitle("Once Upon a Time in America")
+            cell.setReleaseDate("1980")
+            cell.setScore(5.2)
+        }
         return cell
     }
     

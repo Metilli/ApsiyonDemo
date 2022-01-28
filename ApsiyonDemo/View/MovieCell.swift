@@ -77,7 +77,7 @@ class MovieCell: UICollectionViewCell {
         
         imagePoster.frame = CGRect(x: viewBackground.frame.minX + 16,
                                    y: viewBackground.frame.minY - 16,
-                                   width: viewBackground.frame.height / 1.5,
+                                   width: viewBackground.frame.height / 1.25,
                                    height: viewBackground.frame.height)
         
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
@@ -91,7 +91,7 @@ class MovieCell: UICollectionViewCell {
         labelReleaseDate.rightAnchor.constraint(equalTo: viewBackground.rightAnchor, constant: 8).isActive = true
         
         labelScore.translatesAutoresizingMaskIntoConstraints = false
-        labelScore.topAnchor.constraint(equalTo: labelReleaseDate.bottomAnchor, constant: 10).isActive = true
+        labelScore.topAnchor.constraint(equalTo: labelReleaseDate.bottomAnchor, constant: 8).isActive = true
         labelScore.leftAnchor.constraint(equalTo: imagePoster.rightAnchor, constant: 8).isActive = true
         labelScore.rightAnchor.constraint(equalTo: viewBackground.rightAnchor, constant: 8).isActive = true
         labelScore.bottomAnchor.constraint(equalTo: imagePoster.bottomAnchor, constant: -10).isActive = true
@@ -116,11 +116,11 @@ class MovieCell: UICollectionViewCell {
     public func setScore(_ score: Double){
         var color = UIColor()
         if score < 7{
-            color = .red
+            color = UIColor(named: Constants.Color.badScore) ?? .red
         }else if score <= 9{
-            color = .orange
+            color = UIColor(named: Constants.Color.avarageScore) ?? .orange
         }else{
-            color = .green
+            color = UIColor(named: Constants.Color.goodScore) ?? .green
         }
         labelScore.text = "★ \(score) / 10"
         labelScore.textColor = color
