@@ -11,6 +11,28 @@ class AddButton: UIButton {
     
     private let generalColor = UIColor(named: Constants.Color.buttonColor)
     
+    private var _systemImageName = ""
+    public var systemImageName:String{
+        get{
+            return _systemImageName
+        }
+        set{
+            _systemImageName = newValue
+            self.setImage(UIImage(systemName: newValue), for: .normal)
+        }
+    }
+    
+    private var _attributedText:NSMutableAttributedString?
+    public var attributedText:NSMutableAttributedString{
+        get{
+            return _attributedText ?? NSMutableAttributedString(string: "", attributes: nil)
+        }
+        set{
+            _attributedText = newValue
+            self.setAttributedTitle(newValue, for: .normal)
+        }
+    }
+    
     override func layoutMarginsDidChange() {
         addDashLine()
     }
@@ -18,17 +40,12 @@ class AddButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.setImage(UIImage(systemName: "plus"), for: .normal)
         self.tintColor = generalColor
-        
-        let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16)]
-        let boldString = NSMutableAttributedString(string: "Add", attributes:attrs)
-        self.setAttributedTitle(boldString, for: .normal)
         self.setTitleColor(generalColor, for: .normal)
-        
         self.backgroundColor = .white
-        
         self.layer.cornerRadius = 6
+        
+        self.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -50,4 +67,7 @@ class AddButton: UIButton {
         self.layer.addSublayer(shapeLayer)
     }
     
+    @objc func buttonPressed(){
+        print("Custom button pressed")
+    }
 }

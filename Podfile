@@ -5,5 +5,6 @@ target 'ApsiyonDemo' do
 
   # Pods for ApsiyonDemo
   pod 'Alamofire', '~> 5.5'
+  pod 'Kingfisher'
   
 end

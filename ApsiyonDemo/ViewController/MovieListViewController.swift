@@ -11,9 +11,13 @@ class MovieListViewController: UIViewController {
     
     var movieCollectionView: UICollectionView? = nil
     
+    private var populerMovies:PopulerMovies?
+    private var movieList:[Movie] = []
+    
     override func viewSafeAreaInsetsDidChange() {
         setupCollectionView()
         addButton()
+        fetchPopulerMovies()
     }
     
     override func viewDidLoad() {
@@ -65,6 +69,10 @@ class MovieListViewController: UIViewController {
         viewBackground.heightAnchor.constraint(equalToConstant: 100).isActive = true
         
         let button = AddButton()
+        let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16)]
+        let buttonTitle = NSMutableAttributedString(string: "Add", attributes:attrs)
+        button.attributedText = buttonTitle
+        button.systemImageName = "plus"
         viewBackground.addSubview(button)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.leftAnchor.constraint(equalTo: viewBackground.leftAnchor, constant: 16).isActive = true
@@ -73,29 +81,47 @@ class MovieListViewController: UIViewController {
         button.heightAnchor.constraint(equalToConstant: 50).isActive = true
         view.layoutIfNeeded()
     }
+    
+    func fetchPopulerMovies(){
+        let pageNumber = 1 + (populerMovies?.page ?? 0)
+        if pageNumber <= 5{
+            ApiService.fetchPopulerMovies (page: pageNumber) { (result) in
+                switch result {
+                case .success(let movies):
+                    self.populerMovies = movies
+                    for movie in movies.results{
+                        self.movieList.append(movie)
+                    }
+                    DispatchQueue.main.async {
+                        self.movieCollectionView?.reloadData()
+                    }
+                case .failure(let error):
+                    print("Error processing json data: \(error)")
+                }
+            }
+        }
+    }
 }
 
 // MARK: - CollectionView DataSource
 extension MovieListViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return movieList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCell.identifier, for: indexPath) as! MovieCell
         
-        if indexPath.row == 0{
-            cell.setTitle("The Shawkshank Redemption")
-            cell.setReleaseDate("1970")
-            cell.setScore(9.1)
-        }else if indexPath.row == 1{
-            cell.setTitle("Fight Club")
-            cell.setReleaseDate("1975")
-            cell.setScore(7)
-        }else{
-            cell.setTitle("Once Upon a Time in America")
-            cell.setReleaseDate("1980")
-            cell.setScore(5.2)
+        cell.layoutSubviews()
+        
+        if movieList.count > indexPath.row{
+            cell.setTitle(movieList[indexPath.row].originalTitle)
+            cell.setReleaseDate(movieList[indexPath.row].releaseDate ?? "")
+            cell.setScore(movieList[indexPath.row].voteAverage)
+            cell.setPosterURL(movieList[indexPath.row].posterPath)
+        }
+        if movieList.count - 1 == indexPath.row{
+            fetchPopulerMovies()
         }
         return cell
     }
@@ -124,7 +150,7 @@ extension MovieListViewController:  UICollectionViewDelegateFlowLayout{
 extension MovieListViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let movieDetailVC = MovieDetailViewController()
-        movieDetailVC.movieTitle = "Fight"
+        movieDetailVC.movieTitle = movieList[indexPath.row].originalTitle
         navigationController?.pushViewController(movieDetailVC, animated: true)
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MovieCell: UICollectionViewCell {
     
@@ -30,11 +31,11 @@ class MovieCell: UICollectionViewCell {
         return label
     }()
     
+    private static let imagePosterRadius:CGFloat = 6.0
     private let imagePoster: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
-        imageView.backgroundColor = .cyan
-        imageView.layer.cornerRadius = 6
+        imageView.layer.cornerRadius = imagePosterRadius
         return imageView
     }()
     
@@ -70,8 +71,8 @@ class MovieCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        viewBackground.frame = CGRect(x: contentView.frame.minX + 14,
-                                      y: contentView.frame.minY + 14,
+        viewBackground.frame = CGRect(x: contentView.frame.minX + 16,
+                                      y: contentView.frame.minY + 16,
                                       width: contentView.frame.width - 28,
                                       height: contentView.frame.height - 16)
         
@@ -83,7 +84,7 @@ class MovieCell: UICollectionViewCell {
         labelTitle.translatesAutoresizingMaskIntoConstraints = false
         labelTitle.topAnchor.constraint(lessThanOrEqualTo: labelReleaseDate.topAnchor).isActive = true
         labelTitle.leftAnchor.constraint(equalTo: imagePoster.rightAnchor, constant: 8).isActive = true
-        labelTitle.rightAnchor.constraint(equalTo: imageRightArrow.leftAnchor, constant: 4).isActive = true
+        labelTitle.rightAnchor.constraint(equalTo: imageRightArrow.leftAnchor, constant: 8).isActive = true
         
         labelReleaseDate.translatesAutoresizingMaskIntoConstraints = false
         labelReleaseDate.topAnchor.constraint(equalTo: labelTitle.bottomAnchor, constant: 12).isActive = true
@@ -103,6 +104,8 @@ class MovieCell: UICollectionViewCell {
         imageRightArrow.widthAnchor.constraint(equalToConstant: rightArrowWidth).isActive = true
         imageRightArrow.rightAnchor.constraint(equalTo: viewBackground.rightAnchor, constant: -16).isActive = true
         imageRightArrow.centerYAnchor.constraint(equalTo: viewBackground.centerYAnchor, constant: 0).isActive = true
+        
+        self.layoutIfNeeded()
     }
     
     public func setTitle(_ title: String){
@@ -110,7 +113,8 @@ class MovieCell: UICollectionViewCell {
     }
     
     public func setReleaseDate(_ date: String){
-        labelReleaseDate.text = date
+        let dateArr = date.components(separatedBy: ["-"])
+        labelReleaseDate.text = dateArr[0]
     }
     
     public func setScore(_ score: Double){
@@ -126,7 +130,32 @@ class MovieCell: UICollectionViewCell {
         labelScore.textColor = color
     }
     
-    public func setPosterURL(_ urlString: String){
-        
+    public func setPosterURL(_ urlString: String?){
+        if let safeUrlString = urlString{
+            if let safeUrl = URL(string: Constants.ApiService.posterUrl + safeUrlString){
+                imagePoster.clipsToBounds = true
+                let processor = DownsamplingImageProcessor(size: imagePoster.bounds.size)
+                                |> RoundCornerImageProcessor(cornerRadius: MovieCell.imagePosterRadius)
+                imagePoster.kf.indicatorType = .activity
+                imagePoster.kf.setImage(
+                    with: safeUrl,
+                    placeholder: UIImage(named: "placeholderImage"),
+                    options: [
+                        .processor(processor),
+                        .scaleFactor(UIScreen.main.scale),
+                        .loadDiskFileSynchronously,
+                        .transition(.fade(1)),
+                        .cacheOriginalImage
+                    ])
+                {
+                    result in
+                    switch result {
+                    case .success(_): break
+                        
+                    case .failure(_): break
+                    }
+                }
+            }
+        }
     }
 }

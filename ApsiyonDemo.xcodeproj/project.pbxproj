@@ -18,6 +18,10 @@
 		043781D627A46E6C00838BE1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043781D527A46E6C00838BE1 /* Constants.swift */; };
 		043781DA27A4723B00838BE1 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043781D927A4723B00838BE1 /* AddButton.swift */; };
 		043781DC27A47C6D00838BE1 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043781DB27A47C6D00838BE1 /* MovieDetailViewController.swift */; };
+		0464D53D27A4AA09001BDDF3 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464D53C27A4AA09001BDDF3 /* ApiService.swift */; };
+		0464D53F27A4AAA3001BDDF3 /* PopulerMovies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464D53E27A4AAA3001BDDF3 /* PopulerMovies.swift */; };
+		04AB429327A4C57500A971ED /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB429227A4C57500A971ED /* CoreDataService.swift */; };
+		04AB429527A4CD3D00A971ED /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB429427A4CD3D00A971ED /* Reachability.swift */; };
 		09D783D379D0E2C4D8D7E2C3 /* Pods_ApsiyonDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2B32AB8706B695C306C37C /* Pods_ApsiyonDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +39,10 @@
 		043781D527A46E6C00838BE1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		043781D927A4723B00838BE1 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		043781DB27A47C6D00838BE1 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		0464D53C27A4AA09001BDDF3 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		0464D53E27A4AAA3001BDDF3 /* PopulerMovies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopulerMovies.swift; sourceTree = "<group>"; };
+		04AB429227A4C57500A971ED /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		04AB429427A4CD3D00A971ED /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		7D2B32AB8706B695C306C37C /* Pods_ApsiyonDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApsiyonDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB12B5FE31682BE06CE9231 /* Pods-ApsiyonDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApsiyonDemo.release.xcconfig"; path = "Target Support Files/Pods-ApsiyonDemo/Pods-ApsiyonDemo.release.xcconfig"; sourceTree = "<group>"; };
 		E2563FED7E8AF12EBC12BAC3 /* Pods-ApsiyonDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApsiyonDemo.debug.xcconfig"; path = "Target Support Files/Pods-ApsiyonDemo/Pods-ApsiyonDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +99,7 @@
 		0419A07A27A3D8B0001919D5 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				0464D53E27A4AAA3001BDDF3 /* PopulerMovies.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -117,6 +126,9 @@
 			isa = PBXGroup;
 			children = (
 				0419A06C27A3D895001919D5 /* ApsiyonDemo.xcdatamodeld */,
+				0464D53C27A4AA09001BDDF3 /* ApiService.swift */,
+				04AB429227A4C57500A971ED /* CoreDataService.swift */,
+				04AB429427A4CD3D00A971ED /* Reachability.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -255,10 +267,14 @@
 			files = (
 				0419A06E27A3D895001919D5 /* ApsiyonDemo.xcdatamodeld in Sources */,
 				043781DA27A4723B00838BE1 /* AddButton.swift in Sources */,
+				04AB429527A4CD3D00A971ED /* Reachability.swift in Sources */,
 				0419A06427A3D895001919D5 /* AppDelegate.swift in Sources */,
 				0419A06627A3D895001919D5 /* SceneDelegate.swift in Sources */,
 				043781DC27A47C6D00838BE1 /* MovieDetailViewController.swift in Sources */,
+				0464D53D27A4AA09001BDDF3 /* ApiService.swift in Sources */,
+				0464D53F27A4AAA3001BDDF3 /* PopulerMovies.swift in Sources */,
 				04035A6327A419F2004E35E5 /* MovieCell.swift in Sources */,
+				04AB429327A4C57500A971ED /* CoreDataService.swift in Sources */,
 				04035A6127A3E160004E35E5 /* MovieListViewController.swift in Sources */,
 				043781D627A46E6C00838BE1 /* Constants.swift in Sources */,
 			);
